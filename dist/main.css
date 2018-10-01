@@ -1,0 +1,10 @@
+a-face:before,
+b-face:before {
+  font-size: 3rem;
+  content: "\1F61E"
+}
+
+a-face.upgraded:before,
+b-face.upgraded:before {
+  content: "\1F603"
+}
