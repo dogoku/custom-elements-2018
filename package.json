@@ -12,14 +12,32 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-async-to-generator": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.0",
+    "cssnano": "^4.1.4",
+    "document-register-element": "^1.11.1",
+    "fast-sass-loader": "^1.4.6",
     "html-loader": "^0.5.5",
+    "html-webpack-exclude-assets-plugin": "0.0.7",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.0.8",
+    "sass-loader": "^7.1.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
-  }
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.2"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ]
 }

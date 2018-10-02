@@ -1,0 +1,13 @@
+@mixin face() {
+  font-size: 3rem;
+  &:before {
+    content: "😞"
+  }
+  &.upgraded:before {
+    content: "😃"
+  }
+}
+
+.kokos {
+  color: red;
+}

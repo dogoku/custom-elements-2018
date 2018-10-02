@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.kokos {
+  color: red; }
+
+a-face {
+  font-size: 3rem; }
+  a-face:before {
+    content: "\1F61E"; }
+  a-face.upgraded:before {
+    content: "\1F603"; }
+
+.kokos {
+  color: red; }
+
+b-face {
+  font-size: 3rem; }
+  b-face:before {
+    content: "\1F61E"; }
+  b-face.upgraded:before {
+    content: "\1F603"; }
+
+body {
+  background: white; }
+
+
+/*# sourceMappingURL=themeLight.css.map*/

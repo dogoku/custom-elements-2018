@@ -5,4 +5,5 @@ export default class BFace extends HTMLElement {
     this.classList.add('upgraded');
   }
 }
+
 customElements.define('b-face', BFace);
