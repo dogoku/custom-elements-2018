@@ -8,6 +8,7 @@ A bare minimum repo, with Webpack 4, Babel 7 and Custom Elements
 - Using the battle-tested [WebReflections/document-register-element](https://github.com/WebReflection/document-register-element) polyfill
 - Babel 7, which supports transpiled code for browser with native Custom Elements support
 - Webpack 4 with bare minimum configuration + webpack-html-plugin
+- Sass with theme support
 
 ## Usage
 
@@ -15,12 +16,11 @@ A bare minimum repo, with Webpack 4, Babel 7 and Custom Elements
 > npm install && npm run start
 ```
 
-## Things to note
+## Improvements
 
 - You will need to add a few more things for a large, production ready project
-  - Better styling tooling (CSS Preprocessor, PostCSS or CSS in JS)
   - Testing framework
-  - Linting tooling for js, css, etc
+  - Linting tooling for js, css, etcs
   - Configuration management (env variables, dev, prod, test, etc)
   - Baked in ServiceWorker and PWA support
   - Modern (chrome, ff, safari, edge) + legacy (ie11) builds, using script type=module + safari fix

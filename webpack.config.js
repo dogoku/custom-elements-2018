@@ -50,11 +50,13 @@ var config =  {
           name: 'themeDark',
           test: (m,c,entry = 'foo') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
           chunks: 'all',
+          enforce: true
         },
         themeLightStyles: {
           name: 'themeLight',
           test: (m,c,entry = 'bar') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
           chunks: 'all',
+          enforce: true
         }
       }
     }
@@ -63,7 +65,7 @@ var config =  {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
-      excludeAssets: [/theme*/] 
+      excludeAssets: [/theme*/]
     }),
     new HtmlWebpackExcludeAssetsPlugin(),
     new MiniCssExtractPlugin({
