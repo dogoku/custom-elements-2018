@@ -14,10 +14,11 @@ function recursiveIssuer(m) {
 }
 
 var config =  {
+  resolve: {
+    modules: [path.resolve(__dirname, './src'), path.resolve(__dirname, './src/components'), path.resolve(__dirname, './node_modules')]
+  },
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
-    themeDark: path.resolve(__dirname, './src/theme-dark.scss'),
-    themeLight: path.resolve(__dirname, './src/theme-light.scss'),
+    main: path.resolve(__dirname, './src/index.js')
   },
   module: {
     rules: [{
@@ -38,39 +39,37 @@ var config =  {
       use: [
         MiniCssExtractPlugin.loader,
         { loader: 'css-loader', options: { sourceMap: true, importLoaders: 2 } },
-
-        { loader: 'sass-loader', options: { sourceMap: true } },
+        { loader: 'sass-loader', options: { sourceMap: true, includePaths: ['./src'] } },
       ]
     }]
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        themeDarkStyles: {
-          name: 'themeDark',
-          test: (m,c,entry = 'foo') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
-          chunks: 'all',
-          enforce: true
-        },
-        themeLightStyles: {
-          name: 'themeLight',
-          test: (m,c,entry = 'bar') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
-          chunks: 'all',
-          enforce: true
-        }
-      }
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       themeDarkStyles: {
+  //         name: 'themeDark',
+  //         test: (m,c,entry = 'foo') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
+  //         chunks: 'all',
+  //         enforce: true
+  //       },
+  //       themeLightStyles: {
+  //         name: 'themeLight',
+  //         test: (m,c,entry = 'bar') => m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,
+  //         chunks: 'all',
+  //         enforce: true
+  //       }
+  //     }
+  //   }
+  // },
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
       excludeAssets: [/theme*/]
     }),
-    new HtmlWebpackExcludeAssetsPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      chunkFilename: "[id].css"
+      chunkFilename: "[name].css"
     })
   ]
 };

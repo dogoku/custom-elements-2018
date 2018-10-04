@@ -6,13 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Custom Elements!</title>
-  <link rel="stylesheet" title="dark" href="themeDark.css">
-  <link rel="alternate stylesheet" title="light" href="themeLight.css">
 </head>
 
 <body>
+  <h1>Custom Elements!</h1>
   <a-face></a-face>
   <b-face></b-face>
+  <br>
+  <label><input type="radio" name="theme" value="dark" checked onchange="loadTheme(this.value)">dark</label>
+  <label><input type="radio" name="theme" value="light" onchange="loadTheme(this.value)">light</label>
+  <label><input type="radio" name="theme" value="blue" onchange="loadTheme(this.value)">blue</label>
 </body>
 
 </html>

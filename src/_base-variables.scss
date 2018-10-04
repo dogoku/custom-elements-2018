@@ -1,0 +1,14 @@
+@import 'colors';
+
+$body-bg: $sgx-black !default;
+$text-color: $sgx-white !default;
+
+@mixin base-styles() {
+  @include _base_styles();
+}
+
+@mixin _base_styles() {
+  html {
+    color: $text-color;
+  }
+}

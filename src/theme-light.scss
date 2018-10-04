@@ -1,3 +1,5 @@
-$body-bg: white;
-
-@import "shared";
+@import "base-variables";
+$body-bg: $sgx-white;
+$text-color: $sgx-black;
+// @import "app_theme_dark";
+@import "app-styles";
