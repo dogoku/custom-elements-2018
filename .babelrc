@@ -1,5 +1,13 @@
 {
-  "presets": ["@babel/preset-env"],
+  "presets": [[
+    "@babel/preset-env", {
+      "useBuiltIns": "entry",
+      "modules": "commonjs",
+      "targets": {
+        "browsers": ["ie >= 11"]
+      }
+    }
+  ]],
   "plugins": [
     "@babel/plugin-transform-async-to-generator",
     "@babel/plugin-transform-runtime",
